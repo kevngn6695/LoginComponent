@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Container className="login-container">
-        <Form />
+        <Form className="login-input-form" />
       </Container>
       <Footer className="login-footer" />
     </div>

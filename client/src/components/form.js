@@ -8,13 +8,13 @@ function form(props) {
       <h1>Form</h1>
 
       <label>
-        Name:
-        <input type="text" name="name" />
+        Email:
+        <input type="email" name="email" />
       </label>
       <br />
       <label>
-        Email:
-        <input type="email" name="email" />
+        Password:
+        <input type="password" name="password" />
       </label>
       <br />
       <Button className="login-btn">Login</Button>
