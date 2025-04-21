@@ -8,7 +8,27 @@ function App() {
   return (
     <div className="App">
       <Container className="login-container">
-        <Form className="login-input-form" />
+        <Form
+          className="login-input-form"
+          title="login"
+          fields={[
+            {
+              email: "email",
+              label: "Email",
+              type: "email",
+              required: true,
+              placeholder: "Email",
+            },
+            {
+              password: "password",
+              label: "Password",
+              type: "password",
+              required: true,
+              placeholder: "Password",
+            },
+          ]}
+          submitText="Login"
+        />
       </Container>
       <Footer className="login-footer" />
     </div>
