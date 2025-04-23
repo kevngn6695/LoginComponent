@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import Button from "./button";
 import Heading from "./heading";
 import "../assets/style/sass/components/form.sass";
@@ -60,23 +60,23 @@ function Form({
   );
 }
 
-// Form.propTypes = {
-//   className: PropTypes.string,
-//   title: PropTypes.string,
-//   fields: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       name: PropTypes.string.isRequired,
-//       type: PropTypes.string,
-//       label: PropTypes.string,
-//       required: PropTypes.bool,
-//       placeholder: PropTypes.string,
-//       className: PropTypes.string,
-//       rows: PropTypes.number,
-//     }),
-//   ),
-//   onSubmit: PropTypes.func,
-//   submitText: PropTypes.string,
-//   children: PropTypes.node,
-// };
+Form.propTypes = {
+  className: PropTypes.string,
+  title: PropTypes.string,
+  fields: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      type: PropTypes.string,
+      label: PropTypes.string,
+      required: PropTypes.bool,
+      placeholder: PropTypes.string,
+      className: PropTypes.string,
+      rows: PropTypes.number,
+    }),
+  ),
+  onSubmit: PropTypes.func,
+  submitText: PropTypes.string,
+  children: PropTypes.node,
+};
 
 export default React.memo(Form);

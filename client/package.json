@@ -39,6 +39,7 @@
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
+    "prop-types": "^15.8.1",
     "webpack": "^5.99.5"
   }
 }

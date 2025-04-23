@@ -6,7 +6,7 @@ import Form from "./components/form";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Container className="login-container">
         <Form
           className="login-input-form"
@@ -31,7 +31,7 @@ function App() {
         />
       </Container>
       <Footer className="login-footer" />
-    </div>
+    </>
   );
 }
 
