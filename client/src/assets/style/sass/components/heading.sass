@@ -1,8 +1,13 @@
+@import '../init/init.sass'
+
 .form-heading
     font-size: 2rem
+    @extend %poppins-font
 
 input
     font-size: 0.7rem
-    padding: 0.3rem 0.3rem
+    padding: 0.5rem 1rem
     border-radius: 30px
     border: none
+    width: clamp(200px, 50%, 400px)
+    @extend %poppins-font
