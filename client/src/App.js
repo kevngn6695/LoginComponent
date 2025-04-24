@@ -14,14 +14,12 @@ function App() {
           fields={[
             {
               email: "email",
-              label: "Email",
               type: "email",
               required: true,
               placeholder: "Email",
             },
             {
               password: "password",
-              label: "Password",
               type: "password",
               required: true,
               placeholder: "Password",
