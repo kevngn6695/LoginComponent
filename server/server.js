@@ -3,6 +3,12 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
+const db = require("./db/db");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const { ApolloServer } = require("@apollo/server");
+const { makeExecutableSchema } = require("@graphql-tools/schema");
+const { applyMiddleware } = require("@apollo/server/express4");
 
 /* Set port number to connect server with client */
 const port = process.env.PORT || 5500;
@@ -18,8 +24,6 @@ app.use(bodyParser.json());
 
 /* Set a path between client and server */
 app.use(express.static(path.join(__dirname, "client/build")));
-
-app.get("/api", (req, res) => {});
 
 app.get(/^\/(?!api).*/, (req, res) => {
   // Match all except /api routes
