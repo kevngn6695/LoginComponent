@@ -1,4 +1,6 @@
 import React from "react";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Container from "./components/container";
 import "./assets/style/sass/main/app.sass";
 import Footer from "./components/footer";
@@ -6,7 +8,7 @@ import Form from "./components/form";
 
 function App() {
   return (
-    <>
+    <Router>
       <Container className="login-container">
         <Form
           className="login-input-form"
@@ -29,8 +31,8 @@ function App() {
         />
       </Container>
       <Footer className="login-footer" />
-    </>
+    </Router>
   );
 }
 
-export default App;
+export default React.memo(App);
