@@ -1,35 +1,19 @@
 import React from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Container from "./components/container";
 import "./assets/style/sass/main/app.sass";
 import Footer from "./components/footer";
-import Form from "./components/form";
+import Login from "./pages/login";
 
 function App() {
   return (
     <Router>
-      <Container className="login-container">
-        <Form
-          className="login-input-form"
-          title="login"
-          fields={[
-            {
-              email: "email",
-              type: "email",
-              required: true,
-              placeholder: "Email",
-            },
-            {
-              password: "password",
-              type: "password",
-              required: true,
-              placeholder: "Password",
-            },
-          ]}
-          submitText="Login"
-        />
-      </Container>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Login />} /> */}
+      </Routes>
+
       <Footer className="login-footer" />
     </Router>
   );
