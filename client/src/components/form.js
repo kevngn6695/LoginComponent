@@ -24,7 +24,11 @@ function Form({
 
   return (
     <form className={`form ${className}`} onSubmit={handleSubmit} {...props}>
-      {title && <Heading className="form-heading">{title}</Heading>}
+      {title && (
+        <Heading className="form-heading" h1>
+          {title}
+        </Heading>
+      )}
 
       {fields.map((field) => (
         <div key={field.name} className="form-field">
