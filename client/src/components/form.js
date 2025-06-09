@@ -1,7 +1,11 @@
 import React from "react";
+
+import { FirstLetterUpperCase } from "../utils/ult";
+
 import PropTypes from "prop-types";
 import Button from "./button";
 import Heading from "./heading";
+
 import "../assets/style/sass/components/form.sass";
 
 function Form({
@@ -26,7 +30,7 @@ function Form({
     <form className={`form ${className}`} onSubmit={handleSubmit} {...props}>
       {title && (
         <Heading className="form-heading" h1>
-          {title}
+          {FirstLetterUpperCase(title)}
         </Heading>
       )}
 

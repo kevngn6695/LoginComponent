@@ -7,6 +7,7 @@ const db = require("./db/db");
 const operation = require("./db/operations");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+
 const { ApolloServer } = require("@apollo/server");
 const { makeExecutableSchema } = require("@graphql-tools/schema");
 const { applyMiddleware } = require("@apollo/server/express4");
@@ -70,6 +71,15 @@ const resolvers = {
       const user = await operation.createUser(username, hashedPassword);
       const token = jwt.sign({ id: user.id }, "secret", { expiresIn: "1h" });
       return { token, user };
+    },
+    forgotPassword: async (_, { email }) => {
+      const user = await operation.getUserByEmail(email);
+      if (!user) {
+        throw new Error("User not found!");
+      }
+      const resetToken = jwt.sign({ id: user.id });
+
+      await operation.setResetToken(user.id, resetToken);
     },
   },
 };
